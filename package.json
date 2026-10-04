@@ -1,0 +1,23 @@
+{
+  "name": "hobby-tashkent",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "nuxt build",
+    "dev": "nuxt dev",
+    "generate": "nuxt generate",
+    "preview": "nuxt preview"
+  },
+  "dependencies": {
+    "esbuild": "^0.28.1",
+    "jsdom": "^29.1.1",
+    "multer": "^2.2.0",
+    "nuxt": "^3.17.0",
+    "sql.js": "^1.14.1",
+    "vue": "^3.5.0"
+  },
+  "devDependencies": {
+    "@types/jsdom": "^28.0.3",
+    "@types/multer": "^2.2.0"
+  }
+}
