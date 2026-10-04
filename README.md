@@ -1,70 +1,73 @@
 # Hobby Games Tashkent
 
-Интернет-магазин настольных игр для магазина в Ташкенте. Проект построен на **Nuxt 3** и заточен под реальный каталог настольных игр, варгеймов, ККИ и аксессуаров.
+Board game store website built with **Nuxt 3**. A full-stack catalog for a real retail store in Tashkent selling tabletop games, wargames, TCGs and accessories.
 
-## Что внутри
+## Features
 
-- адаптивная главная страница с баннерами, категориями, популярными товарами и новинками;
-- каталог с поиском, фильтрацией по категориям и фильтром «только в наличии»;
-- карточки товаров с изображениями, ценами и статусом наличия;
-- авторизация администратора;
-- админ-панель для управления товарами и категориями;
-- серверная часть на **Nitro/SQLite** (`sql.js`);
-- импорт/публикация товаров, включая подтягивание данных из **Cloudshop**;
-- возможность отмечать популярные товары и новинки для вывода на главную.
+- Responsive homepage with banners, featured products, and new arrivals
+- Product catalog with search, category filtering, and in-stock filter
+- Product cards with images, prices, and availability status
+- Admin panel with authentication for managing products and categories
+- Import and publish products from external sources (CloudShop POS)
+- Mark products as popular or new for homepage display
 
-## Стек
+## Tech Stack
 
-- **Nuxt 3**
-- **Vue 3**
-- **TypeScript**
-- **Nitro**
-- **SQLite (sql.js)**
-- **JSDOM**
-- **Multer**
-- **Google Fonts: Roboto + Ubuntu**
+| Layer | Technology |
+|-------|-----------|
+| Frontend | Vue 3, TypeScript, Google Fonts (Roboto, Ubuntu) |
+| Backend | Nuxt 3, Nitro |
+| Database | SQLite (sql.js) |
+| Scraping | JSDOM, Multer (file uploads) |
+| External | CloudShop API integration |
 
-## Как запустить
+## Getting Started
 
 ```bash
+# Install dependencies
 npm install
-```
 
-### Режим разработки
-
-```bash
+# Development server at http://localhost:3000
 npm run dev
-```
 
-### Сборка
-
-```bash
+# Production build
 npm run build
-```
 
-### Предпросмотр продакшн-сборки
-
-```bash
+# Preview production build
 npm run preview
 ```
 
-## Описание проекта
+### Environment Variables
 
-Сайт сделан для розничного магазина настольных игр **Hobby Games Tashkent**.
+Create a `.env` file in the root directory:
 
-Пользователи могут:
-- просматривать каталог игр;
-- искать товары по названию;
-- фильтровать товары по категориям;
-- видеть новинки и популярные позиции.
+```
+CS_EMAIL=your_cloudshop_email
+CS_PASSWORD=your_cloudshop_password
+CS_URL=https://web.cloudshop.ru/pos/home
+CS_COMPANY_ID=your_company_id
+CS_STORE_ID=your_store_id
+ADMIN_LOGIN=your_admin_login
+ADMIN_PASSWORD=your_admin_password
+```
 
-Администратор может:
-- авторизоваться в закрытой админ-панели;
-- управлять товарами и категориями;
-- добавлять товары в базу и редактировать их;
-- отмечать товары как популярные или новинки;
-- подтягивать и публиковать товары из внешнего источника.
+## Project Structure
 
-## Зачем этот проект
+```
+├── pages/           # Vue pages (index, catalog, game detail, admin)
+├── components/      # Reusable Vue components (ProductCard)
+├── server/          # Nitro backend
+│   ├── api/         # REST API endpoints
+│   └── utils/       # CloudShop client, DB utils, scraper
+├── assets/          # CSS styles
+├── data/            # SQLite database
+└── public/          # Static files
+```
 
-Цель проекта — простой и понятный интернет-каталог настольных игр для реального магазина: с быстрым поиском, удобным каталогом и лёгким управлением контентом через админку.
+## What I Learned
+
+- Building a full-stack Nuxt 3 app with server-side API routes
+- SQLite integration via sql.js for lightweight persistent storage
+- External API integration (CloudShop POS system)
+- Admin dashboard with CRUD operations and authentication
+- Product data scraping and import pipeline
