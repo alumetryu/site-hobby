@@ -63,11 +63,3 @@ ADMIN_PASSWORD=your_admin_password
 ├── data/            # SQLite database
 └── public/          # Static files
 ```
-
-## What I Learned
-
-- Building a full-stack Nuxt 3 app with server-side API routes
-- SQLite integration via sql.js for lightweight persistent storage
-- External API integration (CloudShop POS system)
-- Admin dashboard with CRUD operations and authentication
-- Product data scraping and import pipeline
